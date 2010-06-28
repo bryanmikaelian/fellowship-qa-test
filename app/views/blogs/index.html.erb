@@ -23,7 +23,7 @@
 		<h4><%=h blog.name %></h4>
 		<span>Created by <%=h blog.author.name %> on <%=h blog.created_at.strftime('%a %d %b %Y') %> | </span>
 		<%= link_to 'edit', edit_blog_path(blog) %> <%= link_to 'delete', blog, :confirm => 'Deleting this post cannot be undone. Are you 	sure you want to delete this post?', :method => :delete %>
-		<p><%= f.text_area :post %></p>
+		<p><%=h blog.post %></p>
 	</div>
 	<% end %>
 	

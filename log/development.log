@@ -4513,3 +4513,96 @@ Processing BlogsController#index (for 127.0.0.1 at 2010-06-27 22:40:15) [GET]
   [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
 Rendering blogs/index
 Completed in 5ms (View: 1, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-27 23:08:00) [GET]
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-27 23:08:02) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 17ms (View: 13, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2010-06-27 23:08:06) [POST]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"aa", "post"=>"", "author_id"=>"1"}, "authenticity_token"=>"8KcPpz8Yrbpb3IlT5Y3DnXcQxXJudJC/gbh0Gi54l+Q="}
+  [4;36;1mBlog Create (0.3ms)[0m   [0;1mINSERT INTO "blogs" ("name", "created_at", "post", "updated_at", "author_id") VALUES('aa', '2010-06-28 04:08:06', '', '2010-06-28 04:08:06', 1)[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 55ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-27 23:08:06) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x1041c75c8>) on line #26 of app/views/blogs/index.html.erb:
+23: 		<h4><%=h blog.name %></h4>
+24: 		<span>Created by <%=h blog.author.name %> on <%=h blog.created_at.strftime('%a %d %b %Y') %> | </span>
+25: 		<%= link_to 'edit', edit_blog_path(blog) %> <%= link_to 'delete', blog, :confirm => 'Deleting this post cannot be undone. Are you 	sure you want to delete this post?', :method => :delete %>
+26: 		<p><%= f.text_area :post %></p>
+27: 	</div>
+28: 	<% end %>
+29: 	
+
+    app/views/blogs/index.html.erb:26
+    app/views/blogs/index.html.erb:21:in `each'
+    app/views/blogs/index.html.erb:21
+    app/controllers/blogs_controller.rb:7:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (90.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-27 23:09:04) [GET]
+  [4;35;1mBlog Load (0.3ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-27 23:09:07) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2010-06-27 23:09:10) [POST]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"aassadsa", "post"=>"aaas", "author_id"=>"1"}, "authenticity_token"=>"8KcPpz8Yrbpb3IlT5Y3DnXcQxXJudJC/gbh0Gi54l+Q="}
+  [4;36;1mBlog Create (0.3ms)[0m   [0;1mINSERT INTO "blogs" ("name", "created_at", "post", "updated_at", "author_id") VALUES('aassadsa', '2010-06-28 04:09:10', 'aaas', '2010-06-28 04:09:10', 1)[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 9ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-27 23:09:10) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
