@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+	<title>Assuring the Quality - New Post</title>
+</head>
+<body>
+	<div id="title" align="center">
+		Assuring the Quality
+	</div>
+	<div id="subtitle" align="center">
+		one bug at a time....
+	</div>
+	<div id="navigation" class="general">
+		<a href="">home</a>
+		<%= link_to 'new', new_blog_path %>		
+	</div>
+	<% @blogs.each do |blog| %>
+	<div class="blog">
+		<h4><%=h blog.name %></h4>
+		<span>Created by <%=h blog.author.name %> on <%=h blog.created_at.strftime('%a %d %b %Y') %> | </span>
+		<%= link_to 'edit', edit_blog_path(blog) %> <%= link_to 'delete', blog, :confirm => 'Deleting this post cannot be undone. Are you 	sure you want to delete this post?', :method => :delete %>
+		<p></p>
+	</div>
+	<% end %>
+	
+	<div id="footer">
+		2010 Fellowship Technologies | Design by Bryan Mikaelian | For Demo Purposes Only
+	</div>
+</body>
+</html>
