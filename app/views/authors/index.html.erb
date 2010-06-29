@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
-	<title>Assuring the Quality - Index</title>
+	<title>Assuring the Quality - Authors</title>
 </head>
 <body>
 	<div id="title" align="center">
@@ -15,20 +15,29 @@
 		one bug at a time....
 	</div>
 	<div id="navigation" class="general">
-		<a href="">home</a>
+		<a href="/blogs">home</a>
 		<%= link_to 'new', new_blog_path %>	
 		<%= link_to 'admin', authors_path %>
 		<span id="logout"><a href="">logout</a></span>	
 	</div>
-	<% @blogs.each do |blog| %>
 	<div class="blog">
-		<h4><%=h blog.name %></h4>
-		<span id="byline">Created by <%=h blog.author.name %> on <%=h blog.created_at.strftime('%a %d %b %Y') %> | </span>
-		<%= link_to 'edit', edit_blog_path(blog) %> <%= link_to 'delete', blog, :confirm => 'Deleting this post cannot be undone. Are you 	sure you want to delete this post?', :method => :delete %>
-		<p><%=h blog.post %></p>
+		<form action="index.html" method="get">
+			<h4 align="center">Authors</h4>
+			<table id="authors" align="center">
+			<% @authors.each do |author| %>
+			  <tr>
+			    <td><%=h author.name %></td>
+			    <td><%= link_to 'edit', edit_author_path(author) %></td> 
+				<td><%= link_to 'delete', author, :confirm => 'Removing an author cannot be undone.  Are you sure you wish to delete this author?', :method => :delete %></td>
+			  </tr>
+			<% end %>
+			</table>
+			<div align="center">
+				<%= link_to 'new author', new_author_path %>	
+			</div>
+		</form>
 	</div>
-	<% end %>
-	
+
 	<div id="footer">
 		2010 Fellowship Technologies | Design by Bryan Mikaelian | For Demo Purposes Only
 	</div>

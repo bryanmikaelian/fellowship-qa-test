@@ -22,44 +22,58 @@
 #navigation
 {
 	word-spacing: 5px;
+	margin-left:auto;
+	margin-right:auto;
 	width:25%;
+}
+
+#logout
+{
+	float:right;
+}
+
+
+#footer
+{
+	padding: 25px;
+	margin-left:auto;
+	margin-right:auto;
+	width:60%;
+	text-align: center;
+	font: 50% "Myraid", Verdana, sans-serif;
+}
+
+#author_actions
+{
+	text-align: right;
+}
+
+#password
+{
+	padding-bottom: 185px;
+}
+
+#authors
+{
+		padding: 0px;
+		font: 80% "Helvetica", Verdana, sans-serif;
+		text-align: justify;
+}
+
+#byline
+{
+	text-indent: 30pt;
+	padding: 0px;
+	font: 75% "Myraid", Verdana, sans-serif;
+	text-align: justify;
 }
 
 #mute
 {
+	color: gray;
+	font: normal normal normal 50%/normal Myraid, Verdana, sans-serif;
 	padding-left: 5px;
-	color: grey;
-	width:60%;
-	font: 50% "Myraid", Verdana, sans-serif;
-}
-
-#footer
-{
-	padding: 10px;
-	margin-left:auto;
-	margin-right:auto;
-	width:60%;
-	text-align: center;
-	font: 50% "Myraid", Verdana, sans-serif;
-	color: grey;
-}
-
-#invalid
-{
-	padding: 10px;
-	margin-left:auto;
-	margin-right:auto;
-	width:60%;
-	text-align: center;
-	font: 80% "Myraid", Verdana, sans-serif;
-	color: grey;
-}
-
-.general
-{
-	margin-left:auto;
-	margin-right:auto;
-	width:25%;
+	width: 60%;
 }
 
 .blog
@@ -70,6 +84,14 @@
 	border: 1px;
 	border-bottom-style: solid;
 	padding: 10px;
+}
+
+.textfield
+{
+	font: 100% "Georgia", "Trebuchet MS", Verdana, sans-serif;
+	font-size: 20px;
+	height: 22px;
+	padding: 0px;
 }
 
 a:link
@@ -101,13 +123,6 @@ p
 	text-align: justify;
 }
 
-span
-{
-	text-indent: 30pt;
-	padding: 0px;
-	font: 75% "Myraid", Verdana, sans-serif;
-	text-align: justify;
-}
 
 h4
 {
@@ -115,18 +130,6 @@ h4
 	font: 100% "Georgia", "Trebuchet MS", Verdana, sans-serif;
 	font-size: 36px;
 	padding: 5px;
-	margin: 0px;
-	outline: 0px;
-	color: #000066;
-	text-decoration: none;
-}
-
-h6
-{
-	
-	font: 100% "Georgia", "Trebuchet MS", Verdana, sans-serif;
-	font-size: 36px;
-	padding: 0px;
 	margin: 0px;
 	outline: 0px;
 	color: #000066;
@@ -145,19 +148,27 @@ h5
 	text-decoration: none;
 }
 
-#password_area
+h6
 {
-	padding: 185px;
-}
-
-.textfield
-{
-	height: 22px;
-	font-size: 20px;
+	
 	font: 100% "Georgia", "Trebuchet MS", Verdana, sans-serif;
+	font-size: 36px;
 	padding: 0px;
+	margin: 0px;
+	outline: 0px;
+	color: #000066;
+	text-decoration: none;
 }
 
+tr
+{
+		text-align: center;
+}
+
+text
+{
+	font-size: 24px;
+}
 
 textarea
 {

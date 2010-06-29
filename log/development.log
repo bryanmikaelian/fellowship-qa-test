@@ -4606,3 +4606,2683 @@ Rendering blogs/index
   [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
 Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-27 23:10:35) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 69ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 11:17:26) [GET]
+  [4;36;1mBlog Load (2.8ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.9ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 424ms (View: 321, DB: 4) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 11:17:40) [GET]
+Rendering blogs/new
+ERROR: compiling _run_erb_app47views47blogs47new46html46erb RAISED compile error
+/Users/bmikaelian/Rails/fellowshipqa/app/views/blogs/new.html.erb:23: syntax error, unexpected ')', expecting kDO_BLOCK
+... Author.find :all, :id, :name) ).to_s); @output_buffer.conca...
+                              ^
+Function body:           def _run_erb_app47views47blogs47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\"\n   \"http://www.w3.org/TR/html4/strict.dtd\">\n\n<html lang=\"en\">\n<head>\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n\t<link rel=\"stylesheet\" href=\"/stylesheets/style.css\" type=\"text/css\">\n\t<title>Assuring the Quality - New Post</title>\n</head>\n<body>\n\t<div id=\"title\" align=\"center\">\n\t\tAssuring the Quality\n\t</div>\n\t<div id=\"subtitle\" align=\"center\">\n\t\tone bug at a time....\n\t</div>\n\t<div class=\"blog\">\n\t\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;  form_for(@blog) do |f| ; @output_buffer.concat "\n\t\t<h6>Name it</h6>"
+; @output_buffer.concat(( f.text_field(:name, :class=>"textfield") ).to_s); @output_buffer.concat "\n\t\t<br/>\n\t\t<div id=\"mute\">Cannot be more than 50 characters</div>\n\t\t<br/>\n\t\t<h6>Assign it</h6>"
+
+
+
+; @output_buffer.concat(( collection_select(:blog, :author_id, Author.find :all, :id, :name) ).to_s); @output_buffer.concat "\n\t\t<br/>\n\t\t<br/>\n\t\t<h6>Think it</h6>\n\t\t"
+
+
+
+; @output_buffer.concat(( f.text_area :post ).to_s); @output_buffer.concat "\t\n\t\t<br/>\n\t\t"
+
+; @output_buffer.concat(( f.submit 'Create' ).to_s); @output_buffer.concat " \n\t\t<a href=\"/blogs\">Cancel</a>\n\t\t"
+
+;  end ; @output_buffer.concat "\n\t</div>\n\t<div id=\"footer\">\n\t\t2010 Fellowship Technologies | Design by Bryan Mikaelian | For Demo Purposes Only \n\t</div>\n</body>\n</html>"
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/bmikaelian/Rails/fellowshipqa/app/views/blogs/new.html.erb:40:in `compile!'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/bmikaelian/Rails/fellowshipqa/app/controllers/blogs_controller.rb:29:in `new'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/utils.rb:252:in `safe_fork'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:163:in `start'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/bin/passenger-spawn-server:61
+
+ActionView::TemplateError (compile error
+/Users/bmikaelian/Rails/fellowshipqa/app/views/blogs/new.html.erb:23: syntax error, unexpected ')', expecting kDO_BLOCK
+... Author.find :all, :id, :name) ).to_s); @output_buffer.conca...
+                              ^) on line #23 of app/views/blogs/new.html.erb:
+20: 		<br/>
+21: 		<div id="mute">Cannot be more than 50 characters</div>
+22: 		<br/>
+23: 		<h6>Assign it</h6><%= collection_select(:blog, :author_id, Author.find :all, :id, :name) %>
+24: 		<br/>
+25: 		<br/>
+26: 		<h6>Think it</h6>
+
+    app/views/blogs/new.html.erb:40:in `compile!'
+    app/controllers/blogs_controller.rb:29:in `new'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (48.2ms)
+Rendered rescues/_request_and_response (11.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 11:18:06) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (7.8ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 44ms (View: 32, DB: 8) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 11:18:29) [GET]
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."name" = 'Jesse') [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 11:18:41) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:12:20) [GET]
+  [4;36;1mBlog Load (0.9ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.6ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 118ms (View: 81, DB: 2) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:12:40) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:13:12) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:13:16) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:13:23) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 71ms (View: 12, DB: 1) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:13:56) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:01) [GET]
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:03) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:16) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:17) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 67ms (View: 62, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:28) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 16ms (View: 12, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:29) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:29) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:47) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 18:14:48) [GET]
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#edit (for 127.0.0.1 at 2010-06-28 18:14:50) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs"."id" = 4) [0m
+Rendering blogs/edit
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 68ms (View: 65, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/4/edit]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 18:14:52) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#edit (for 127.0.0.1 at 2010-06-28 18:14:53) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 4) [0m
+Rendering blogs/edit
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/4/edit]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 18:14:57) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:27:18) [GET]
+  [4;36;1mBlog Load (2.0ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.6ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 70ms (View: 36, DB: 3) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:27:20) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:29:33) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+
+ActionView::TemplateError (undefined local variable or method `index_book_path' for #<ActionView::Base:0x10418ede0>) on line #20 of app/views/blogs/index.html.erb:
+17: 	<div id="navigation" class="general">
+18: 		<a href="">home</a>
+19: 		<%= link_to 'new', new_blog_path %>	
+20: 		<%= link_to 'authors', index_book_path %>
+21: 		<span id="logout"><a href="">logout</a></span>	
+22: 	</div>
+23: 	<% @blogs.each do |blog| %>
+
+    app/views/blogs/index.html.erb:20
+    app/controllers/blogs_controller.rb:7:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (91.3ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:29:58) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+
+ActionView::TemplateError (undefined local variable or method `index_author_path' for #<ActionView::Base:0x10428c418>) on line #20 of app/views/blogs/index.html.erb:
+17: 	<div id="navigation" class="general">
+18: 		<a href="">home</a>
+19: 		<%= link_to 'new', new_blog_path %>	
+20: 		<%= link_to 'authors', index_author_path %>
+21: 		<span id="logout"><a href="">logout</a></span>	
+22: 	</div>
+23: 	<% @blogs.each do |blog| %>
+
+    app/views/blogs/index.html.erb:20
+    app/controllers/blogs_controller.rb:7:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (34.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:30:26) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+
+ActionView::TemplateError (undefined local variable or method `index_author_path' for #<ActionView::Base:0x1043e1c28>) on line #20 of app/views/blogs/index.html.erb:
+17: 	<div id="navigation" class="general">
+18: 		<a href="">home</a>
+19: 		<%= link_to 'new', new_blog_path %>	
+20: 		<%= link_to 'authors', index_author_path %>
+21: 		<span id="logout"><a href="">logout</a></span>	
+22: 	</div>
+23: 	<% @blogs.each do |blog| %>
+
+    app/views/blogs/index.html.erb:20
+    app/controllers/blogs_controller.rb:7:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:32:27) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:32:29) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+
+ActionView::TemplateError (undefined local variable or method `book' for #<ActionView::Base:0x1040525f8>) on line #25 of app/views/authors/index.html.erb:
+22: 			<% @authors.each do |author| %>
+23: 			  <tr>
+24: 			    <td><%=h author.name %></td>
+25: 			    <td><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
+26: 			  </tr>
+27: 			<% end %>
+28: 			</table>
+
+    app/views/authors/index.html.erb:25
+    app/views/authors/index.html.erb:22:in `each'
+    app/views/authors/index.html.erb:22
+    app/controllers/authors_controller.rb:6:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:32:49) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 21:32:49) [GET]
+
+ActionController::RoutingError (No route matches "/style.css" with {:method=>:get}):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:32:58) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-06-28 21:33:10) [DELETE]
+  Parameters: {"authenticity_token"=>"0jncIY27UeduIB4qBuNflcGwtoU4wHx43zYhnu77MP4=", "id"=>"1"}
+
+ActionController::UnknownAction (No action responded to destroy. Actions: index):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 21:33:22) [GET]
+
+ActionController::RoutingError (No route matches "/index.html" with {:method=>:get}):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 21:33:45) [GET]
+
+ActionController::RoutingError (No route matches "/index.html" with {:method=>:get}):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 21:33:48) [GET]
+
+ActionController::RoutingError (No route matches "/index.html" with {:method=>:get}):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:33:52) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:33:54) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:33:56) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:33:57) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:34:06) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 72ms (View: 12, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:34:12) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:35:03) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:35:21) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:36:58) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 21:43:39) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 55ms (View: 49, DB: 1) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:43:41) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:44:16) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:44:43) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:45:38) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:47:02) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 63ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:47:41) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+ERROR: compiling _run_erb_app47views47authors47index46html46erb RAISED compile error
+/Users/bmikaelian/Rails/fellowshipqa/app/views/authors/index.html.erb:25: syntax error, unexpected ')'
+...fer.concat(( link_to 'edit', ).to_s); @output_buffer.concat ...
+                              ^
+Function body:           def _run_erb_app47views47authors47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\"\n   \"http://www.w3.org/TR/html4/strict.dtd\">\n\n<html lang=\"en\">\n<head>\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n\t<link rel=\"stylesheet\" href=\"/stylesheets/style.css\" type=\"text/css\">\n\t<title>Assuring the Quality - Authors</title>\n</head>\n<body>\n\t<div id=\"title\" align=\"center\">\n\t\tAssuring the Quality\n\t</div>\n\t<div id=\"subtitle\" align=\"center\">\n\t\tone bug at a time....\n\t</div>\n\n\t<div class=\"blog\">\n\t\t<form action=\"index.html\" method=\"get\">\n\t\t\t<h6>Authors</h6>\n\t\t\t<table id=\"authors\">\n\t\t\t"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;  @authors.each do |author| ; @output_buffer.concat "\n\t\t\t  <tr>\n\t\t\t    <td>"
+
+; @output_buffer.concat((h author.name ).to_s); @output_buffer.concat "</td>\n\t\t\t    <td>"
+; @output_buffer.concat(( link_to 'edit', ).to_s); @output_buffer.concat " | "; @output_buffer.concat(( link_to 'delete', author, :confirm => 'Removing an author cannot be undone.  Are you sure you wish to delete this author?', :method => :delete ).to_s); @output_buffer.concat "</td>\n\t\t\t  </tr>\n\t\t\t"
+
+;  end ; @output_buffer.concat "\n\t\t\t</table>\n\t\t\t<br/>\n\t\t\t<br/>\n\t\t\t<input type=\"submit\" value=\"Save changes\"/> \n\t\t\t<a href=\"/blogs\">Cancel</a>\n\t\t</form>\n\t</div>\n\n\t<div id=\"footer\">\n\t\t2010 Fellowship Technologies | Design by Bryan Mikaelian | For Demo Purposes Only\n\t</div>\n</body>\n</html>\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/bmikaelian/Rails/fellowshipqa/app/views/authors/index.html.erb:44:in `compile!'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:942:in `render_without_benchmark'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/bmikaelian/Rails/fellowshipqa/app/controllers/authors_controller.rb:6:in `index'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/bmikaelian/.gem/ruby/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Users/bmikaelian/.gem/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/utils.rb:252:in `safe_fork'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:163:in `start'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+/Users/bmikaelian/.gem/ruby/1.8/gems/passenger-2.2.14/bin/passenger-spawn-server:61
+
+ActionView::TemplateError (compile error
+/Users/bmikaelian/Rails/fellowshipqa/app/views/authors/index.html.erb:25: syntax error, unexpected ')'
+...fer.concat(( link_to 'edit', ).to_s); @output_buffer.concat ...
+                              ^) on line #25 of app/views/authors/index.html.erb:
+22: 			<% @authors.each do |author| %>
+23: 			  <tr>
+24: 			    <td><%=h author.name %></td>
+25: 			    <td><%= link_to 'edit', %> | <%= link_to 'delete', author, :confirm => 'Removing an author cannot be undone.  Are you sure you wish to delete this author?', :method => :delete %></td>
+26: 			  </tr>
+27: 			<% end %>
+28: 			</table>
+
+    app/views/authors/index.html.erb:44:in `compile!'
+    app/controllers/authors_controller.rb:6:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:48:19) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:48:27) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 67ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:48:35) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:48:53) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:49:14) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:49:21) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:49:42) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:49:59) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:50:47) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 65ms (View: 61, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:56:07) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:56:31) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:56:42) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:56:56) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:57:08) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:58:00) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:58:01) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:58:01) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:58:02) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:58:18) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:58:34) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:58:49) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:59:03) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:59:24) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:59:43) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 21:59:52) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 61ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:00:37) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:00:51) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:01:02) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:01:12) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:01:18) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:01:26) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:01:44) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+  [4;36;1mAuthor Create (0.3ms)[0m   [0;1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES('Coly Gutekunst', '2010-06-29 03:02:04', '2010-06-29 03:02:04')[0m
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:02:05) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+  [4;35;1mAuthor Create (0.3ms)[0m   [0mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES('Matthew Sneeden', '2010-06-29 03:02:28', '2010-06-29 03:02:28')[0m
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:02:30) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name DESC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:02:48) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:03:20) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:03:40) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:03:50) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:04:03) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:05:03) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:05:18) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:05:20) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:05:22) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:05:24) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:05:25) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:05:34) [GET]
+  [4;36;1mAuthor Load (0.5ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 68ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:05:35) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:05:38) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:05:58) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:06:03) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:06:09) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:06:29) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:07:01) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 67ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:07:02) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:07:51) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:09:12) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:09:23) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:09:31) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:09:40) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:09:52) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:10:11) [GET]
+  [4;35;1mAuthor Load (0.5ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:10:16) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:10:31) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:10:47) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:11:42) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:12:04) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:12:22) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:12:42) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:13:00) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:13:22) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to edit. Actions: index):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:14:38) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:14:39) [GET]
+  Parameters: {"id"=>"1"}
+Rendering authors/edit
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #18 of app/views/authors/edit.html.erb:
+15: 		one bug at a time....
+16: 	</div>
+17: 	<div class="blog">
+18: 		<% form_for(@author) do |f| %>
+19: 		<h6>Author Name it</h6><%= f.text_field(:name, :class=>"textfield") %>
+20: 		<br/>	
+21: 		<br/>
+
+    app/views/authors/edit.html.erb:18
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (32.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:14:50) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:14:51) [GET]
+  Parameters: {"id"=>"1"}
+Rendering authors/edit
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #18 of app/views/authors/edit.html.erb:
+15: 		one bug at a time....
+16: 	</div>
+17: 	<div class="blog">
+18: 		<% form_for(@author) do |f| %>
+19: 		<h6>Author Name it</h6><%= f.text_field(:name, :class=>"textfield") %>
+20: 		<br/>	
+21: 		<br/>
+
+    app/views/authors/edit.html.erb:18
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (92.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:15:21) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:15:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:16:04) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:16:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:16:08) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelian222"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+
+ActionController::UnknownAction (No action responded to update. Actions: edit and index):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:16:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:16:51) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelian"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/author
+Completed in 61ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 22:16:51) [GET]
+
+ActionController::RoutingError (No route matches "/author" with {:method=>:get}):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:16:56) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelians"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/author
+Completed in 5ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 22:16:56) [GET]
+
+ActionController::RoutingError (No route matches "/author" with {:method=>:get}):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 22:17:00) [GET]
+
+ActionController::RoutingError (No route matches "/author" with {:method=>:get}):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:17:04) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:17:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:17:06) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelian"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/author
+Completed in 5ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-28 22:17:06) [GET]
+
+ActionController::RoutingError (No route matches "/author" with {:method=>:get}):
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:17:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:17:17) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelian"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 62ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:17:17) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:17:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:17:21) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelian333"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 5ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:17:21) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:18:18) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:18:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:18:21) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelian2323"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 5ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:18:22) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:18:25) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:18:57) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:18:59) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:19:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:19:02) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelian111"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 6ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:19:02) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:20:15) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:20:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:20:18) [PUT]
+  Parameters: {"commit"=>"Create", "author"=>{"name"=>"Bryan Mikaelianaaa"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 6ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:20:18) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:20:54) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:20:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:20:58) [PUT]
+  Parameters: {"commit"=>"Update name", "author"=>{"name"=>"Bryan Mikaelian"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 59ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:20:58) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:21:06) [PUT]
+  Parameters: {"commit"=>"Update name", "author"=>{"name"=>"Bryan Mikaelian11"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 5ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:21:06) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:21:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:21:57) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:23:44) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:23:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:23:47) [PUT]
+  Parameters: {"commit"=>"Update name", "author"=>{"name"=>"Bryan Mikaelian22"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 61ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:23:47) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" [0m
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:27:42) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:27:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:27:45) [PUT]
+  Parameters: {"commit"=>"Update name", "author"=>{"name"=>"Bryan Mikaelian333"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mAuthor Update (0.3ms)[0m   [0mUPDATE "authors" SET "updated_at" = '2010-06-29 03:27:45', "name" = 'Bryan Mikaelian333' WHERE "id" = 1[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 62ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:27:45) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:27:48) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:27:51) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:27:51) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:27:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#update (for 127.0.0.1 at 2010-06-28 22:27:54) [PUT]
+  Parameters: {"commit"=>"Update name", "author"=>{"name"=>"Bryan Mikaelian"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mAuthor Update (0.2ms)[0m   [0;1mUPDATE "authors" SET "updated_at" = '2010-06-29 03:27:54', "name" = 'Bryan Mikaelian' WHERE "id" = 1[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 61ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/1]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:27:54) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:28:30) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-06-28 22:28:33) [DELETE]
+  Parameters: {"authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"3"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 3) [0m
+  [4;36;1mAuthor Destroy (0.2ms)[0m   [0;1mDELETE FROM "authors" WHERE "id" = 3[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 55ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/3]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:28:33) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:28:35) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:28:38) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:30:23) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:31:16) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:31:23) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:31:32) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:31:39) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:31:57) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:32:09) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:32:12) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:32:21) [GET]
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:32:23) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:32:28) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-06-28 22:32:29) [GET]
+
+ActionView::MissingTemplate (Missing template authors/new.erb in view path app/views):
+  app/controllers/authors_controller.rb:23:in `new'
+  passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+  passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:33:19) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-06-28 22:33:20) [GET]
+Rendering authors/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/new]
+
+
+Processing AuthorsController#create (for 127.0.0.1 at 2010-06-28 22:33:23) [POST]
+  Parameters: {"commit"=>"Create author", "author"=>{"name"=>"aassa"}, "authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw="}
+  [4;36;1mAuthor Create (0.3ms)[0m   [0;1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES('aassa', '2010-06-29 03:33:23', '2010-06-29 03:33:23')[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 55ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:33:23) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-06-28 22:33:26) [DELETE]
+  Parameters: {"authenticity_token"=>"yUONizNrWsC3dUnFnqw+A5ZFf1HVtZF3TfTo6Ct0bkw=", "id"=>"4"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 4) [0m
+  [4;35;1mAuthor Destroy (0.2ms)[0m   [0mDELETE FROM "authors" WHERE "id" = 4[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 58ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/4]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:33:26) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:34:24) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:34:25) [GET]
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:35:51) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:36:00) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:36:02) [GET]
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-06-28 22:36:04) [GET]
+Rendering authors/new
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://fellowshipqa.local/authors/new]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-06-28 22:36:25) [GET]
+Rendering authors/new
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://fellowshipqa.local/authors/new]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-06-28 22:37:21) [GET]
+Rendering authors/new
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://fellowshipqa.local/authors/new]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-06-28 22:37:29) [GET]
+Rendering authors/new
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://fellowshipqa.local/authors/new]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:37:38) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-06-28 22:37:40) [GET]
+Rendering authors/new
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://fellowshipqa.local/authors/new]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:37:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:37:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:37:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:38:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:38:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:38:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#edit (for 127.0.0.1 at 2010-06-28 22:39:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Rendering authors/edit
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors/1/edit]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:40:36) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:40:37) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:41:36) [GET]
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:41:39) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 64ms (View: 60, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:41:47) [GET]
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:41:47) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:41:48) [GET]
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:41:49) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:41:51) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:41:52) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 64ms (View: 60, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:41:58) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:42:00) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:42:01) [GET]
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:42:34) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:42:59) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:43:01) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-06-28 22:43:02) [GET]
+Rendering authors/new
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://fellowshipqa.local/authors/new]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:43:09) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:44:31) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:44:32) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:44:33) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:44:34) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:44:42) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:44:44) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-06-28 22:44:46) [GET]
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:44:58) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:44:59) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:45:00) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:45:04) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:45:06) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:45:07) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:45:31) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:45:34) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:46:53) [GET]
+  [4;36;1mAuthor Load (0.4ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:47:10) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:47:30) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 66ms (View: 62, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:47:52) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:47:59) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:48:04) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:48:12) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:48:17) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:48:26) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 67ms (View: 63, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:48:40) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:48:46) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:48:50) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:48:54) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:48:55) [GET]
+  [4;35;1mAuthor Load (0.4ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:48:58) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:49:32) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:49:38) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:49:53) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:50:00) [GET]
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-06-28 22:50:15) [GET]
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 1) [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-06-28 22:50:18) [GET]
+  [4;36;1mAuthor Load (0.3ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors]

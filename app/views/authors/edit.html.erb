@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
-	<title>Assuring the Quality - New Post</title>
+	<title>Assuring the Quality - Edit Author</title>
 </head>
 <body>
 	<div id="title" align="center">
@@ -15,20 +15,14 @@
 		one bug at a time....
 	</div>
 	<div class="blog">
-		<% form_for(@blog) do |f| %>
-		<h6>Name it</h6><%= f.text_field(:name, :class=>"textfield") %>
+		<% form_for(@author) do |f| %>
+		<h6>Author Name</h6><%= f.text_field(:name, :class=>"textfield") %>
+		<br/>	
 		<br/>
-		<div id="mute">Cannot be more than 50 characters</div>
-		<br/>
-		<h6>Assign it</h6><%= collection_select(:blog, :author_id, Author.find (:all), :id, :name) %>
-		<br/>
-		<br/>
-		<h6>Think it</h6>
-		<%= f.text_area :post %>	
-		<br/>
-		<%= f.submit 'Create' %> 
-		<a href="/blogs">Cancel</a>
+	 	<%= f.submit 'Update name' %> 
+		<a href="/authors">Cancel</a>
 		<% end %>
+
 	</div>
 	<div id="footer">
 		2010 Fellowship Technologies | Design by Bryan Mikaelian | For Demo Purposes Only 
