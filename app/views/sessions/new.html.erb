@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+	<title>Assuring the Quality - Login</title>
+</head>
+<body>
+	<div align="center">
+
+	</div>
+	<div id="password_area" align="center">
+
+		<% if flash[:notice] %>
+		<div id="invalid" align="center">
+			<%= flash[:notice] %>
+		</div>
+		<% end %>
+		
+		<% form_tag sessions_url do %>
+		<h5>username</h5>
+		<%= text_field_tag :username, nil, :class => "textfield" %>
+		<br /><br />
+		<h5>password</h5>
+		<%= password_field_tag :password, nil, :class => "textfield" %>
+		<br /><br />
+	
+		<%= submit_tag "Sign in" %>
+		<% end %>
+	</div>
+
+	<div id="footer">
+		2010 Fellowship Technologies | For Demo Purposes Only 
+	</div>
+</body>
+</html>

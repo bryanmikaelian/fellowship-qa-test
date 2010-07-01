@@ -18,7 +18,7 @@
 		<a href="">home</a>
 		<%= link_to 'new', new_blog_path %>	
 		<%= link_to 'admin', authors_path %>
-		<span id="logout"><a href=""></a></span>	
+		<span id="logout"><%= link_to 'logout', root_url, :method => :delete %></span>	
 	</div>
 	<% @blogs.each do |blog| %>
 	<div class="blog">

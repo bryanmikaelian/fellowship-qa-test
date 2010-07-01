@@ -18,7 +18,7 @@
 		<a href="/blogs">home</a>
 		<%= link_to 'new', new_blog_path %>	
 		<%= link_to 'admin', authors_path %>
-		<span id="logout"><a href=""></a></span>	
+		<span id="logout"><%= link_to 'logout', root_url, :method => :delete %></span>
 	</div>
 	<div class="blog">
 		<form action="index.html" method="get">

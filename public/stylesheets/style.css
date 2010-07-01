@@ -32,25 +32,31 @@
 	float:right;
 }
 
-
 #footer
 {
-	padding: 25px;
+	padding: 10px;
 	margin-left:auto;
 	margin-right:auto;
 	width:60%;
 	text-align: center;
 	font: 50% "Myraid", Verdana, sans-serif;
+	color: grey;
+}
+
+#invalid
+{
+	padding: 10px;
+	margin-left:auto;
+	margin-right:auto;
+	width:60%;
+	text-align: center;
+	font: 80% "Myraid", Verdana, sans-serif;
+	color: grey;
 }
 
 #author_actions
 {
 	text-align: right;
-}
-
-#password
-{
-	padding-bottom: 185px;
 }
 
 #authors
@@ -76,6 +82,22 @@
 	width: 60%;
 }
 
+#invalid
+{
+	padding: 10px;
+	margin-left:auto;
+	margin-right:auto;
+	width:60%;
+	text-align: center;
+	font: 80% "Myraid", Verdana, sans-serif;
+	color: grey;
+}
+
+#password_area
+{
+	padding: 185px;
+}
+
 .blog
 {
 	margin-left:auto;
@@ -93,6 +115,7 @@
 	height: 22px;
 	padding: 0px;
 }
+
 
 a:link
 { 
