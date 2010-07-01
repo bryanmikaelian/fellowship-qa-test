@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   
   def create 
     if user = User.authenticate(params[:username], params[:password])
-      flash[:notice] = nil
+      flash[:notice] = nil # remove this for some  wacky notice message errors!!!!
       session[:user_id] = user.id
       cookies[:username] = { :value => user.username, :expires => 1.week.from_now }
       redirect_to blogs_url || blogs_url
