@@ -44,7 +44,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to("/blogs", :notice => 'Blog was successfully created.') }
+        format.html { redirect_to(blogs_url) }
         format.xml  { render :xml => @blog, :status => :created, :location => @blog }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.update_attributes(params[:blog])
-        format.html { redirect_to("/blogs", :notice => 'Blog was successfully updated.') }
+        format.html { redirect_to(blogs_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
