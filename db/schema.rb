@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20100701015313) do
 
   create_table "blogs", :force => true do |t|
     t.string   "name"
-    t.text     "post",       :limit => 1000
+    t.text     "post"
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
