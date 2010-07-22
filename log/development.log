@@ -17782,3 +17782,33 @@ Migrating to ChangeColumnTypeForPost (20100722214613)
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("blogs")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("sessions")[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:48:59) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-07-22 16:49:00) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 19ms (View: 13, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2010-07-22 16:49:17) [POST]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"Test", "post"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere.."}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Create (0.4ms)[0m   [0mINSERT INTO "blogs" ("name", "created_at", "post", "updated_at", "author_id") VALUES('Test', '2010-07-22 21:49:17', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis dolor nec diam semper blandit. Pellentesque egestas volutpat nisl, commodo varius lorem aliquet eu. Duis cursus nunc semper turpis tincidunt congue. Aenean a mauris eget nisi posuere..', '2010-07-22 21:49:17', NULL)[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 64ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:49:17) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
