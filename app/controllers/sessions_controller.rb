@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       cookies[:username] = { :value => user.username, :expires => 1.week.from_now }
       redirect_to blogs_url || blogs_url
     else
-      flash[:notice] = "Invalid username and/or password.  Please try again."
+      flash[:notice] = "Invalid usrename and/or password.  Please try agian."
       render :action => 'new'
     end 
   end

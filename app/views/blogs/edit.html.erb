@@ -14,24 +14,30 @@
 	<div id="subtitle" align="center">
 		one bug at a time....
 	</div>
+	<div id="requiredField">
+		* = required field
+	</div>
+	<div id="validation" align="justified">
+		<%= error_messages_for :blog %>
+	</div>
 	<div class="blog">
 		<% form_for(@blog) do |f| %>
-		<h6>Rename it</h6><%= f.text_field(:name, :class=>"textfield") %>
+		<h6>Rename it *</h6><%= f.text_field(:name, :class=>"textfield") %>
 		<br/>
 		<div id="mute">Cannot be more than 50 characters</div>
 		<br/>
-		<h6>Reassign it</h6><%= collection_select(:blog, :author_id, Author.all, :id, :name) %>
+		<h6>Reassign it *</h6><%= collection_select(:blog, :author_id, Author.all, :id, :name) %>
 		<br/>
 		<br/>
-		<h6>Rethink it</h6>
+		<h6>Rethink it *</h6>
 		<%= f.text_area :post %>	
 		<br/>
-	 	<%= f.submit 'Create' %> <a href="/blogs">Cancel</a>
+	 	<a href="/blogs">Quit</a> <%= f.submit 'Create' %> 
 		<% end %>
 
 	</div>
 	<div id="footer">
-		2010 Fellowship Technologies | Design by Bryan Mikaelian | For Demo Purposes Only
+		2010 <a href="">Fellowship Technologies</a>  | Design by Bryan Mikaelian | For Demo Purposes Only
 	</div>
 </body>
 </html>

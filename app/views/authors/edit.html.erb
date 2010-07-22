@@ -12,20 +12,26 @@
 		Assuring the Quality
 	</div>
 	<div id="subtitle" align="center">
-		one bug at a time....
+		one bug at a time......
+	</div>
+	<div id="requiredField">
+		* = required field
+	</div>
+	<div id="validation" align="justified">
+		<%= error_messages_for :author %>
 	</div>
 	<div class="blog">
 		<% form_for(@author) do |f| %>
-		<h6>Author Name</h6><%= f.text_field(:name, :class=>"textfield") %>
+		<h6>Author Name *</h6><%= f.text_field(:name, :class=>"textfield") %>
 		<br/>	
 		<br/>
-	 	<%= f.submit 'Update name' %> 
-		<a href="/authors">Cancel</a>
+	 	<%= f.submit 'Update Name' %> 
+		<a href="/authors">Return</a>
 		<% end %>
 
 	</div>
 	<div id="footer">
-		2010 Fellowship Technologies | Design by Bryan Mikaelian | For Demo Purposes Only 
+		2010 <a href="">Fellowship Technologies</a>  | Design by Bryan Mikaelian | For Demo Purposes Only 
 	</div>
 </body>
 </html>
