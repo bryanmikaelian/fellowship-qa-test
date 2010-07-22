@@ -16447,3 +16447,635 @@ Processing SessionsController#create (for 127.0.0.1 at 2010-07-22 14:19:30) [POS
   [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."password" = '' AND "users"."username" = '') LIMIT 1[0m
 Rendering sessions/new
 Completed in 5ms (View: 1, DB: 0) | 200 OK [http://fellowshipqa.local/sessions]
+
+
+Processing SessionsController#index (for 127.0.0.1 at 2010-07-22 15:59:35) [GET]
+Rendering sessions/index
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://fellowshipqa.local/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-07-22 15:59:41) [POST]
+  Parameters: {"commit"=>"Sign in", "username"=>"admin", "password"=>"Pa$$w0rd"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."password" = 'Pa$$w0rd' AND "users"."username" = 'admin') LIMIT 1[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 13ms (DB: 0) | 302 Found [http://fellowshipqa.local/sessions]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 15:59:41) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 10) [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#destroy (for 127.0.0.1 at 2010-07-22 15:59:43) [DELETE]
+  Parameters: {"id"=>"15"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 15) [0m
+  [4;35;1mBlog Destroy (0.3ms)[0m   [0mDELETE FROM "blogs" WHERE "id" = 15[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 61ms (DB: 1) | 302 Found [http://fellowshipqa.local/blogs/15]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 15:59:43) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-07-22 15:59:44) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 74ms (View: 10, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2010-07-22 15:59:49) [POST]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"Test", "post"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel sem sapien. Aenean tempus porttitor turpis, at vestibulum urna.", "author_id"=>"10"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Create (0.3ms)[0m   [0mINSERT INTO "blogs" ("name", "created_at", "post", "updated_at", "author_id") VALUES('Test', '2010-07-22 20:59:49', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel sem sapien. Aenean tempus porttitor turpis, at vestibulum urna.', '2010-07-22 20:59:49', 10)[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 59ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 15:59:49) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" [0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 10) [0m
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:00:19) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-07-22 16:00:22) [DELETE]
+  Parameters: {"id"=>"16"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 16) [0m
+  [4;36;1mAuthor Destroy (0.2ms)[0m   [0;1mDELETE FROM "authors" WHERE "id" = 16[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 59ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/16]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:00:22) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 72ms (View: 65, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-07-22 16:00:23) [DELETE]
+  Parameters: {"id"=>"15"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 15) [0m
+  [4;35;1mAuthor Destroy (0.2ms)[0m   [0mDELETE FROM "authors" WHERE "id" = 15[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 60ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/15]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:00:23) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.3ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 19ms (View: 9, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-07-22 16:00:25) [DELETE]
+  Parameters: {"id"=>"12"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 12) [0m
+  [4;36;1mAuthor Destroy (0.2ms)[0m   [0;1mDELETE FROM "authors" WHERE "id" = 12[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 56ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/12]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:00:25) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-07-22 16:00:27) [DELETE]
+  Parameters: {"id"=>"10"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 10) [0m
+  [4;35;1mAuthor Destroy (0.2ms)[0m   [0mDELETE FROM "authors" WHERE "id" = 10[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 62ms (DB: 1) | 302 Found [http://fellowshipqa.local/authors/10]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:00:27) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-07-22 16:00:28) [DELETE]
+  Parameters: {"id"=>"14"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" WHERE ("authors"."id" = 14) [0m
+  [4;36;1mAuthor Destroy (0.2ms)[0m   [0;1mDELETE FROM "authors" WHERE "id" = 14[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 61ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/14]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:00:29) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-07-22 16:00:30) [DELETE]
+  Parameters: {"id"=>"13"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 13) [0m
+  [4;35;1mAuthor Destroy (0.2ms)[0m   [0mDELETE FROM "authors" WHERE "id" = 13[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 57ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/13]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:00:30) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-07-22 16:00:35) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering blogs/new
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:00:46) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:00:48) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 63ms (View: 57, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-07-22 16:00:51) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2010-07-22 16:00:53) [POST]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"Test", "post"=>"Test"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Create (0.3ms)[0m   [0;1mINSERT INTO "blogs" ("name", "created_at", "post", "updated_at", "author_id") VALUES('Test', '2010-07-22 21:00:53', 'Test', '2010-07-22 21:00:53', NULL)[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 64ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:00:53) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#destroy (for 127.0.0.1 at 2010-07-22 16:00:56) [DELETE]
+  Parameters: {"id"=>"17"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 17) [0m
+  [4;35;1mBlog Destroy (0.2ms)[0m   [0mDELETE FROM "blogs" WHERE "id" = 17[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 11ms (DB: 1) | 302 Found [http://fellowshipqa.local/blogs/17]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:00:56) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:01:15) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 69ms (View: 62, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:01:17) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#new (for 127.0.0.1 at 2010-07-22 16:01:18) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering authors/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/authors/new]
+
+
+Processing AuthorsController#create (for 127.0.0.1 at 2010-07-22 16:01:19) [POST]
+  Parameters: {"commit"=>"Create author", "author"=>{"name"=>"TEst"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Create (0.3ms)[0m   [0;1mINSERT INTO "authors" ("name", "created_at", "updated_at") VALUES('TEst', '2010-07-22 21:01:19', '2010-07-22 21:01:19')[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 59ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:01:19) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:01:20) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 10) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #27 of app/views/blogs/index.html.erb:
+24: 	<% @blogs.each do |blog| %>
+25: 	<div class="blog">
+26: 		<h4><%=h blog.name %></h4>
+27: 		<span id="byline">Created by <%=h blog.author_name(blog) %> on <%=h blog.created_at.strftime('%a %d %b %Y') %> | </span>
+28: 		<%= link_to 'edit', edit_blog_path(blog) %> <%= link_to 'delete', blog, :confirm => 'Deleting this post canot be undone. Are you sure you want to delete this post?', :method => :delete %>
+29: 		<p><%=h blog.post %></p>
+30: 	</div>
+
+    app/models/blog.rb:11:in `author_name'
+    app/views/blogs/index.html.erb:27
+    app/views/blogs/index.html.erb:24:in `each'
+    app/views/blogs/index.html.erb:24
+    app/controllers/blogs_controller.rb:7:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (37.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-07-22 16:02:21) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2010-07-22 16:02:24) [POST]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"test", "post"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel sem", "author_id"=>"17"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Create (0.3ms)[0m   [0;1mINSERT INTO "blogs" ("name", "created_at", "post", "updated_at", "author_id") VALUES('test', '2010-07-22 21:02:24', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel sem', '2010-07-22 21:02:24', 17)[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 60ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:02:24) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 17) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 10) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #27 of app/views/blogs/index.html.erb:
+24: 	<% @blogs.each do |blog| %>
+25: 	<div class="blog">
+26: 		<h4><%=h blog.name %></h4>
+27: 		<span id="byline">Created by <%=h blog.author_name(blog) %> on <%=h blog.created_at.strftime('%a %d %b %Y') %> | </span>
+28: 		<%= link_to 'edit', edit_blog_path(blog) %> <%= link_to 'delete', blog, :confirm => 'Deleting this post canot be undone. Are you sure you want to delete this post?', :method => :delete %>
+29: 		<p><%=h blog.post %></p>
+30: 	</div>
+
+    app/models/blog.rb:11:in `author_name'
+    app/views/blogs/index.html.erb:27
+    app/views/blogs/index.html.erb:24:in `each'
+    app/views/blogs/index.html.erb:24
+    app/controllers/blogs_controller.rb:7:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2010-07-22 16:03:40) [POST]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"test", "post"=>"m", "author_id"=>"17"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Create (0.3ms)[0m   [0;1mINSERT INTO "blogs" ("name", "created_at", "post", "updated_at", "author_id") VALUES('test', '2010-07-22 21:03:40', 'm', '2010-07-22 21:03:40', 17)[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 62ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:03:40) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 17) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 17) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 10) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #27 of app/views/blogs/index.html.erb:
+24: 	<% @blogs.each do |blog| %>
+25: 	<div class="blog">
+26: 		<h4><%=h blog.name %></h4>
+27: 		<span id="byline">Created by <%=h blog.author_name(blog) %> on <%=h blog.created_at.strftime('%a %d %b %Y') %> | </span>
+28: 		<%= link_to 'edit', edit_blog_path(blog) %> <%= link_to 'delete', blog, :confirm => 'Deleting this post canot be undone. Are you sure you want to delete this post?', :method => :delete %>
+29: 		<p><%=h blog.post %></p>
+30: 	</div>
+
+    app/models/blog.rb:11:in `author_name'
+    app/views/blogs/index.html.erb:27
+    app/views/blogs/index.html.erb:24:in `each'
+    app/views/blogs/index.html.erb:24
+    app/controllers/blogs_controller.rb:7:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:03:43) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 17) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 17) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 10) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #27 of app/views/blogs/index.html.erb:
+24: 	<% @blogs.each do |blog| %>
+25: 	<div class="blog">
+26: 		<h4><%=h blog.name %></h4>
+27: 		<span id="byline">Created by <%=h blog.author_name(blog) %> on <%=h blog.created_at.strftime('%a %d %b %Y') %> | </span>
+28: 		<%= link_to 'edit', edit_blog_path(blog) %> <%= link_to 'delete', blog, :confirm => 'Deleting this post canot be undone. Are you sure you want to delete this post?', :method => :delete %>
+29: 		<p><%=h blog.post %></p>
+30: 	</div>
+
+    app/models/blog.rb:11:in `author_name'
+    app/views/blogs/index.html.erb:27
+    app/views/blogs/index.html.erb:24:in `each'
+    app/views/blogs/index.html.erb:24
+    app/controllers/blogs_controller.rb:7:in `index'
+    passenger (2.2.14) lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    passenger (2.2.14) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:441:in `start_request_handler'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:381:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/utils.rb:252:in `safe_fork'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:377:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:163:in `start'
+    passenger (2.2.14) lib/phusion_passenger/railz/application_spawner.rb:222:in `start'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    passenger (2.2.14) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendered rescues/_trace (104.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthorsController#destroy (for 127.0.0.1 at 2010-07-22 16:03:46) [DELETE]
+  Parameters: {"id"=>"17"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" WHERE ("authors"."id" = 17) [0m
+  [4;35;1mAuthor Destroy (0.2ms)[0m   [0mDELETE FROM "authors" WHERE "id" = 17[0m
+Redirected to http://fellowshipqa.local/authors
+Completed in 11ms (DB: 0) | 302 Found [http://fellowshipqa.local/authors/17]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:03:46) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mAuthor Load (0.2ms)[0m   [0mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:03:47) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#destroy (for 127.0.0.1 at 2010-07-22 16:03:49) [DELETE]
+  Parameters: {"id"=>"16"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 16) [0m
+  [4;35;1mBlog Destroy (0.2ms)[0m   [0mDELETE FROM "blogs" WHERE "id" = 16[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 61ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs/16]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:03:49) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.3ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 78ms (View: 8, DB: 1) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#destroy (for 127.0.0.1 at 2010-07-22 16:03:51) [DELETE]
+  Parameters: {"id"=>"19"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs"."id" = 19) [0m
+  [4;36;1mBlog Destroy (0.2ms)[0m   [0;1mDELETE FROM "blogs" WHERE "id" = 19[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 12ms (DB: 1) | 302 Found [http://fellowshipqa.local/blogs/19]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:03:51) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#destroy (for 127.0.0.1 at 2010-07-22 16:03:53) [DELETE]
+  Parameters: {"id"=>"18"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs"."id" = 18) [0m
+  [4;36;1mBlog Destroy (0.2ms)[0m   [0;1mDELETE FROM "blogs" WHERE "id" = 18[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 60ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs/18]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:03:53) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:03:57) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.1ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing AuthorsController#index (for 127.0.0.1 at 2010-07-22 16:03:58) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mAuthor Load (0.2ms)[0m   [0;1mSELECT * FROM "authors" ORDER BY name ASC[0m
+Rendering authors/index
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://fellowshipqa.local/authors]
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2010-07-22 16:03:59) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering blogs/new
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/new]
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2010-07-22 16:04:20) [POST]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"Test", "post"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel sem"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Create (0.3ms)[0m   [0;1mINSERT INTO "blogs" ("name", "created_at", "post", "updated_at", "author_id") VALUES('Test', '2010-07-22 21:04:20', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel sem', '2010-07-22 21:04:20', NULL)[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 63ms (DB: 0) | 302 Found [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:04:20) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;35;1mAuthor Load (0.1ms)[0m   [0mSELECT * FROM "authors" [0m
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
+
+
+Processing BlogsController#edit (for 127.0.0.1 at 2010-07-22 16:05:15) [GET]
+  Parameters: {"id"=>"20"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.1ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs"."id" = 20) [0m
+Rendering blogs/edit
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs/20/edit]
+
+
+Processing BlogsController#update (for 127.0.0.1 at 2010-07-22 16:05:19) [PUT]
+  Parameters: {"commit"=>"Create", "blog"=>{"name"=>"Test", "post"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel sem"}, "id"=>"20"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" WHERE ("blogs"."id" = 20) [0m
+  [4;35;1mBlog Update (0.2ms)[0m   [0mUPDATE "blogs" SET "updated_at" = '2010-07-22 21:05:19', "post" = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel semLorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris ipsum, a pulvinar lorem. Donec ut erat nulla, non vulputate est. Aliquam erat volutpat. Sed tristique tristique lorem nec ullamcorper. Vestibulum sit amet nunc nulla, vitae tincidunt dolor. Pellentesque vel sem' WHERE "id" = 20[0m
+Redirected to http://fellowshipqa.local/blogs
+Completed in 100ms (DB: 1) | 302 Found [http://fellowshipqa.local/blogs/20]
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2010-07-22 16:05:19) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" ORDER BY created_at DESC[0m
+Rendering blogs/index
+  [4;36;1mAuthor Load (0.1ms)[0m   [0;1mSELECT * FROM "authors" [0m
+Completed in 73ms (View: 8, DB: 0) | 200 OK [http://fellowshipqa.local/blogs]
