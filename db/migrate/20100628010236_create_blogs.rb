@@ -2,7 +2,7 @@ class CreateBlogs < ActiveRecord::Migration
   def self.up
     create_table :blogs do |t|
       t.string :name
-      t.string :post
+      t.text :post
       t.integer :author_id
       t.timestamps
     end
